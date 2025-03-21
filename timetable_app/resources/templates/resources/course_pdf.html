@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Cours</title>
+</head>
+<body>
+    <h1>Liste des Cours</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Module</th>
+                <th>Professeur</th>
+                <th>Salle</th>
+                <th>Groupe</th>
+                <th>Début</th>
+                <th>Fin</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in courses %}
+            <tr>
+                <td>{{ course.module.name }}</td>
+                <td>{{ course.teacher.name }}</td>
+                <td>{{ course.room.name }}</td>
+                <td>{{ course.group.name }}</td>
+                <td>{{ course.start_time }}</td>
+                <td>{{ course.end_time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

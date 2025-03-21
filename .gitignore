@@ -1,0 +1,7 @@
+# Fichiers et dossiers à ignorer
+.env
+venv/
+env/
+*.sqlite3
+__pycache__/
+*.pyc
