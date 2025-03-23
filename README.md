@@ -1,7 +1,3 @@
-# Nom de votre projet
-
-Description rapide de votre projet.
-
 ## Prérequis
 
 - Python 3.x
@@ -14,3 +10,11 @@ Description rapide de votre projet.
    ```bash
    git clone https://github.com/votre-utilisateur/votre-repo.git
    cd votre-repo
+
+2. Activez l'environnement virtuel
+   ```bash
+   venv\Scripts\activate
+
+3. Installez les dépendances
+   ```bash
+   pip install -r requirements.txt
