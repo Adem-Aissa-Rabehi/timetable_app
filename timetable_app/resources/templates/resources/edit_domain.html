@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}Ajouter un Cours{% endblock %}
+{% block title %}Modifier un Domaine{% endblock %}
 
 {% block content %}
 <div class="content-header">
     <div class="container-fluid">
-        <h1 class="m-0">Ajouter un Cours</h1>
+        <h1 class="m-0">Modifier un Domaine</h1>
     </div>
 </div>
 
@@ -19,7 +19,7 @@
                 </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-success">Enregistrer</button>
-                    <a href="{% url 'course_list' %}" class="btn btn-secondary">Annuler</a>
+                    <a href="{% url 'domain_list' %}" class="btn btn-secondary">Annuler</a>
                 </div>
             </div>
         </form>

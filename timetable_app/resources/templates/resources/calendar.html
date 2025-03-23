@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Calendrier{% endblock %}
+
+{% block content %}
+<div class="content-header">
+    <div class="container-fluid">
+        <h1 class="m-0">Calendrier</h1>
+    </div>
+</div>
+
+<section class="content">
+    <div class="container-fluid">
+        <div id="calendar"></div>
+    </div>
+</section>
+
+<!-- Scripts pour FullCalendar -->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'timeGridWeek',
+        events: '{% url "calendar_data" %}',
+        editable: true,
+        droppable: true,
+    });
+    calendar.render();
+});
+</script>
+{% endblock %}

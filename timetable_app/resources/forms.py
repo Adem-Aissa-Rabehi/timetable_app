@@ -22,7 +22,7 @@ class FormationForm(forms.ModelForm):
 class ModuleForm(forms.ModelForm):
     class Meta:
         model = Module
-        fields = ['name', 'code', 'formation']
+        fields = ['name', 'code', 'formation', 'total_duration', 'session_duration']
 
 class TeacherForm(forms.ModelForm):
     username = forms.CharField(max_length=150, required=True)
@@ -46,15 +46,7 @@ class GroupForm(forms.ModelForm):
 class CourseForm(forms.ModelForm):
     class Meta:
         model = Course
-        fields = [
-            'module', 'teacher', 'room', 'group',
-            'start_time', 'end_time', 'day_of_week', 'start_date', 'total_sessions'
-        ]
-        widgets = {
-            'start_time': forms.TimeInput(attrs={'type': 'time'}),
-            'end_time': forms.TimeInput(attrs={'type': 'time'}),
-            'start_date': forms.DateInput(attrs={'type': 'date'}),
-        }
+        fields = ['module', 'teacher', 'room', 'group', 'start_time', 'end_time', 'day_of_week', 'start_date', 'total_sessions', 'card_color']
 
     def clean(self):
         cleaned_data = super().clean()

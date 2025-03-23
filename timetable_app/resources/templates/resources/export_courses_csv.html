@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Exporter les Cours en CSV{% endblock %}
+
+{% block content %}
+<div class="content-header">
+    <div class="container-fluid">
+        <h1 class="m-0">Exporter les Cours en CSV</h1>
+    </div>
+</div>
+
+<section class="content">
+    <div class="container-fluid">
+        <p>Cliquez sur le bouton ci-dessous pour télécharger la liste des cours au format CSV :</p>
+        <a href="{% url 'export_courses_csv' %}" class="btn btn-primary">Télécharger CSV</a>
+    </div>
+</section>
+{% endblock %}

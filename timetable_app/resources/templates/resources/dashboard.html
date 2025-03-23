@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}Tableau de Bord{% endblock %}
+
+{% block content %}
+<div class="content-header">
+    <div class="container-fluid">
+        <h1 class="m-0">Tableau de Bord</h1>
+    </div>
+</div>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Salles -->
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>{{ rooms.count }}</h3>
+                        <p>Salles</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <a href="{% url 'room_list' %}" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Domaines -->
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3>{{ domains.count }}</h3>
+                        <p>Domaines</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <a href="{% url 'domain_list' %}" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Formations -->
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        <h3>{{ formations.count }}</h3>
+                        <p>Formations</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <a href="{% url 'formation_list' %}" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Modules -->
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h3>{{ modules.count }}</h3>
+                        <p>Modules</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <a href="{% url 'module_list' %}" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Liste des Cours Récents -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Cours Récents</h3>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Module</th>
+                            <th>Professeur</th>
+                            <th>Salle</th>
+                            <th>Groupe</th>
+                            <th>Jour</th>
+                            <th>Heure</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for course in courses %}
+                        <tr>
+                            <td>{{ course.module }}</td>
+                            <td>{{ course.teacher }}</td>
+                            <td>{{ course.room }}</td>
+                            <td>{{ course.group }}</td>
+                            <td>{{ course.get_day_of_week_display }}</td>
+                            <td>{{ course.start_time }} - {{ course.end_time }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

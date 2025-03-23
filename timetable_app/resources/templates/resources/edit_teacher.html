@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}Ajouter un Groupe{% endblock %}
+{% block title %}Modifier un Professeur{% endblock %}
 
 {% block content %}
 <div class="content-header">
     <div class="container-fluid">
-        <h1 class="m-0">Ajouter un Groupe</h1>
+        <h1 class="m-0">Modifier un Professeur</h1>
     </div>
 </div>
 
@@ -16,21 +16,21 @@
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="id_name">Nom du Groupe</label>
+                        <label for="id_name">Nom du Professeur</label>
                         {{ form.name }}
                     </div>
                     <div class="form-group">
-                        <label for="id_formation">Formation</label>
-                        {{ form.formation }}
+                        <label for="id_username">Nom d'utilisateur</label>
+                        {{ form.username }}
                     </div>
                     <div class="form-group">
-                        <label for="id_student_count">Nombre d'Étudiants</label>
-                        {{ form.student_count }}
+                        <label for="id_password">Mot de passe</label>
+                        {{ form.password }}
                     </div>
                 </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-success">Enregistrer</button>
-                    <a href="{% url 'group_list' %}" class="btn btn-secondary">Annuler</a>
+                    <a href="{% url 'teacher_list' %}" class="btn btn-secondary">Annuler</a>
                 </div>
             </div>
         </form>

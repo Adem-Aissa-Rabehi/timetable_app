@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Supprimer {{ object }}{% endblock %}
+
+{% block content %}
+<div class="content-header">
+    <div class="container-fluid">
+        <h1 class="m-0">Supprimer</h1>
+    </div>
+</div>
+
+<section class="content">
+    <div class="container-fluid">
+        <p>Êtes-vous sûr de vouloir supprimer "{{ object }}" ? Cette action est irréversible.</p>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Confirmer la suppression</button>
+            <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-secondary">Annuler</a>
+        </form>
+    </div>
+</section>
+{% endblock %}
